@@ -43,7 +43,4 @@ EXPOSE ${http_port}/tcp ${agent_port}/tcp
 
 VOLUME ["$JENKINS_HOME"]
 
-#CMD ["/usr/local/bin/jenkins.sh"]
-#ENTRYPOINT ["/bin/ash" , "/usr/local/bin/jenkins.sh"]
-#ENTRYPOINT ["/bin/ash"]
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/jenkins.sh"]
