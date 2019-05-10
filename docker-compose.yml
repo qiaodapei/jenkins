@@ -1,0 +1,19 @@
+version: "3"
+services:
+  jenkins:
+    build: . 
+    image: qiaodapei/jenkins:2.164.2
+    container_name: jenkins
+    restart: always
+    privileged: true
+    #environment:
+    #  - LANG=en_IN.UTF-8
+    #  - JAVA_OPTS:"-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai  -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8"
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+     # - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime
+     # - ./timezone:/etc/timezone
+      - ./jenkins:/data/jenkins_home
+
