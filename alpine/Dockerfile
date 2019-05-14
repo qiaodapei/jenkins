@@ -4,7 +4,7 @@ LABEL maintainer="<371583076@qq.com>" \
       name="jenkins" \
       author="xiao.li" \
       vendor="qiaodapei" \
-      version="v0.1" \
+      version="2.164.3" \
       systemver="alpine" \
       desc="alpine or jenkins" \
       build-date="20190507"   
@@ -12,7 +12,7 @@ COPY resource /tmp/resource
 ### SET ENVIRONNEMENT
 ARG http_port=8080
 ARG agent_port=50000
-ARG jenkins_version=2.164.2
+ARG jenkins_version=2.164.3
 ENV LANG=zh_CN.UTF-8 \
     LANGUAGE=zh_CN.UTF-8 \
     TIME_ZONE=Asia/Shanghai \
