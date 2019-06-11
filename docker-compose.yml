@@ -1,7 +1,7 @@
 version: "3"
 services:
   jenkins:
-    image: qiaodapei/jenkins:alpine-2.164.3 
+    image: qiaodapei/jenkins:alpine-2.176.1
     container_name: jenkins
     restart: always
     privileged: true
