@@ -4,10 +4,10 @@ LABEL maintainer="<371583076@qq.com>" \
       name="jenkins" \
       author="xiao.li" \
       vendor="qiaodapei" \
-      version="2.176.1" \
+      version="2.176.2" \
       systemver="centos" \
       desc="centos or jenkins" \
-      build-date="20190614"
+      build-date="20190718"
 
 ARG user=jenkins
 ARG group=jenkins
@@ -17,7 +17,7 @@ ARG http_port=8080
 ARG agent_port=50000
 ARG JENKINS_HOME=/var/jenkins_home
 ARG TINI_VERSION=v0.16.1
-ARG JENKINS_VERSION=2.176.1
+ARG JENKINS_VERSION=2.176.2
 ARG JENKINS_SHA=8bbc6e2043e7bd102f751aca94b51652e1e792ec0a11377d52c9d9ed484f0e8c
 ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war
 
