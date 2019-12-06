@@ -1,7 +1,7 @@
 version: "3"
 services:
   jenkins:
-    image: qiaodapei/jenkins:alpine-2.176.1
+    image: qiaodapei/jenkins:centos-2.190.3
     container_name: jenkins
     restart: always
     privileged: true
@@ -9,9 +9,24 @@ services:
       - 8080:8080
       - 50000:50000
     volumes:
-      - ./jenkins:/data/jenkins_home
+      - ./jenkins:/var/jenkins_home
       - /data/backup/jenkins:/data/jenkins_backup
+      - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime
+    environment:
+      - JAVA_OPTS=-Djava.awt.headless=true -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai
     networks:
       - xunce
-networks:
-  xunce: 
+  xunce-oms-release:
+    image: qiaodapei/xunce-oms:centos-0.0.1 
+    container_name: xunce-oms-release
+    restart: always
+    privileged: true
+    environment:
+      - JENKINS_URL=http://jenkins:8080/computer/xunce-oms-release/slave-agent.jnlp
+      - JENKINS_SECRET=05f9126f32595b08a4a730ee8f45880e6acd2ce823e88c7bf727cf603b94bc51
+      - JENKINS_AGENT_WORKDIR=/data/jenkins_home
+    volumes:
+      - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime
+    networks:
+      - xunce
+
