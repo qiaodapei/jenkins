@@ -4,10 +4,10 @@ LABEL maintainer="<371583076@qq.com>" \
       name="jenkins" \
       author="xiao.li" \
       vendor="qiaodapei" \
-      version="2.190.3" \
+      version="2.222.1" \
       systemver="centos" \
       desc="centos or jenkins" \
-      build-date="201901206"
+      build-date="20200417"
 
 ARG user=jenkins
 ARG group=jenkins
@@ -17,8 +17,8 @@ ARG http_port=8080
 ARG agent_port=50000
 ARG JENKINS_HOME=/var/jenkins_home
 ARG TINI_VERSION=v0.16.1
-ARG JENKINS_VERSION=2.204.2
-ARG JENKINS_SHA=4a90c54c065c8d297f7141174e0b04995f8e28d1ea41332bcc268af19f7371c7
+ARG JENKINS_VERSION=2.222.1
+ARG JENKINS_SHA=5a6cbb836ceb79728c2d9f72645d0680f789cdb09a44485076aba6143bea953e
 ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war
 
 ### SET ENVIRONNEMENT
@@ -27,7 +27,7 @@ ENV LANG=zh_CN.UTF-8 \
     TIME_ZONE=Asia/Shanghai \
     JENKINS_HOME=$JENKINS_HOME \
     JENKINS_SLAVE_AGENT_PORT=${agent_port} \
-    JENKINS_VERSION=${JENKINS_VERSION:-2.121.1} \
+    JENKINS_VERSION=${JENKINS_VERSION:-2.222.1} \
     JENKINS_UC=https://updates.jenkins.io \
     JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental \
     JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals \
